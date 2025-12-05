@@ -1,14 +1,12 @@
 import { GoogleGenAI } from "@google/genai";
 
-const apiKey = process.env.API_KEY || '';
-
 // Initialize Gemini
 // Note: In a real production app, ensure API_KEY is handled securely.
 // We are following the specific strict guidelines for this environment.
-const ai = new GoogleGenAI({ apiKey });
+const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 export const generateAIResponse = async (userMessage: string): Promise<string> => {
-  if (!apiKey) {
+  if (!process.env.API_KEY) {
     return "I'm currently in offline mode (API Key missing). I can tell you that XYZ Solutions offers premier GPS tracking services.";
   }
 
