@@ -67,20 +67,23 @@ export const POSTERS: PosterData[] = [
     title: "TOTAL CONTROL",
     subtitle: "XYZ SOLUTIONS",
     theme: "blue",
-    icon: "Globe"
+    icon: "Globe",
+    imageUrl: "https://drive.google.com/file/d/1qBSum_fyW95XhW0_RN5oMx-KhtfNslV1/view?usp=drivesdk"
   },
   {
     id: 2,
     title: "SECURE FLEET",
     subtitle: "ANTI-THEFT PROTOCOL",
     theme: "green",
-    icon: "Lock"
+    icon: "Lock",
+    imageUrl: "https://drive.google.com/file/d/1W7m5HG4LFcxC6yhx25glgh3-3u81ce0M/view?usp=drivesdk"
   },
   {
     id: 3,
     title: "SMART DATA",
     subtitle: "REAL-TIME ANALYTICS",
     theme: "dark",
-    icon: "Cpu"
+    icon: "Cpu",
+    imageUrl: "https://drive.google.com/file/d/1fVjc3HAbnxxyljrh1_AGGU2Ew1eUfZHi/view?usp=drivesdk"
   }
 ];

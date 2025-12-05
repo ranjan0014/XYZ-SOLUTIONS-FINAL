@@ -21,4 +21,5 @@ export interface PosterData {
   subtitle: string;
   theme: 'blue' | 'green' | 'dark';
   icon: string;
+  imageUrl?: string;
 }
