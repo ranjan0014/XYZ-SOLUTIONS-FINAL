@@ -4,6 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>XYZ Solutions | Smart GPS Technology</title>
+    <script>
+      // CRITICAL: Polyfill process for browser environment to prevent library crashes
+      window.process = {
+        env: {
+          NODE_ENV: 'production'
+        }
+      };
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -86,6 +94,16 @@
 </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
+    <script type="module" src="./index.tsx"></script>
+    <script>
+      // Global error handler to help debug white screens
+      window.addEventListener('error', function(e) {
+        console.error("Global Error Caught:", e.error);
+        const root = document.getElementById('root');
+        if (root && (!root.innerHTML || root.innerHTML.trim() === "")) {
+          root.innerHTML = '<div style="color:#ff3333; padding:20px; font-family:monospace; background:#000; height:100vh;"><h3>SYSTEM ERROR (Application Crash)</h3><p>Check console for details.</p><pre>' + (e.error ? e.error.message : 'Unknown Error') + '</pre></div>';
+        }
+      });
+    </script>
   </body>
 </html>
